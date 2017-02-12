@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ptactice.mobilesecurity">
+    package="practice.mobilesecurity">
 
     <!--chap01-->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -31,21 +31,26 @@
     <!--chap09-->
     <!--chap10-->
 
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="practice.mobilesecurity"/>
     <application
-        android:name=".App"
+        android:name="practice.mobilesecurity.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <uses-library android:name="android.test.runner"/>
 
         <!--activity-->
-        <activity android:name=".HomeActivity"
+        <activity android:name="practice.mobilesecurity.HomeActivity"
             android:screenOrientation="portrait">
         </activity>
 
         <!--chap01-->
-        <activity android:name=".chapter01.SplashActivity"
+        <activity android:name="practice.mobilesecurity.chapter01.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,48 +59,62 @@
         </activity>
         <!-- 手机防盗 -->
         <activity
-            android:name=".chapter02.LostFindActivity"
+            android:name="practice.mobilesecurity.chapter02.LostFindActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".chapter02.SetUp1Activity"
+            android:name="practice.mobilesecurity.chapter02.SetUp1Activity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".chapter02.SetUp2Activity"
+            android:name="practice.mobilesecurity.chapter02.SetUp2Activity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".chapter02.SetUp3Activity"
+            android:name="practice.mobilesecurity.chapter02.SetUp3Activity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".chapter02.SetUp4Activity"
+            android:name="practice.mobilesecurity.chapter02.SetUp4Activity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".chapter02.ContactSelectActivity"
+            android:name="practice.mobilesecurity.chapter02.ContactSelectActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--chap03--><!-- 通讯卫士 -->
+        <activity
+            android:name="practice.mobilesecurity.chapter03.SecurityPhoneActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="practice.mobilesecurity.chapter03.ContactSelectActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="practice.mobilesecurity.chapter03.AddBlackNumberActivity"
             android:screenOrientation="portrait" >
         </activity>
 
+
         <!---->
-        <activity android:name=".chapter04.AppManagerActivity">
+        <activity android:name="practice.mobilesecurity.chapter04.AppManagerActivity">
         </activity>
 
         <!--receiver-->
         <!--chap02-->
-        <receiver android:name=".chapter02.receiver.SmsLostFindReceiver">
+        <receiver android:name="practice.mobilesecurity.chapter02.receiver.SmsLostFindReceiver">
             <intent-filter android:priority="2147483647">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
         </receiver>
-        <receiver android:name=".chapter02.receiver.BootCompleteReceiver">
+        <receiver android:name="practice.mobilesecurity.chapter02.receiver.BootCompleteReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
         <!-- 设备超级管理员广播接收者 -->
-        <receiver android:name=".chapter02.receiver.MyDeviceAdminReceiver"
+        <receiver android:name="practice.mobilesecurity.chapter02.receiver.MyDeviceAdminReceiver"
             android:description="@string/sample_device_admin_description"
             android:label="@string/sample_device_admin"
             android:permission="android.BIND_DEVICE_ADMIN">
@@ -106,11 +125,24 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
             </intent-filter>
         </receiver>
-
+        <!--chap03-->
+        <!-- 拦截黑名单信息 -->
+        <receiver android:name="practice.mobilesecurity.chapter03.receiver.InterceptSmsReceiver" >
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <!-- 拦截黑名单电话 -->
+        <receiver android:name="practice.mobilesecurity.chapter03.receiver.InterceptCallReceiver" >
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
 
         <!--service-->
         <!--chap02-->
-        <service android:name=".chapter02.service.GPSLocationService"
+        <service android:name="practice.mobilesecurity.chapter02.service.GPSLocationService"
             android:permission="true">
         </service>
     </application>
