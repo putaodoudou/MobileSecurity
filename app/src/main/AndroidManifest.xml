@@ -25,6 +25,7 @@
     <!--chap04-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!--chap05-->
+
     <!--chap06-->
     <!--chap07-->
     <!--chap08-->
@@ -99,6 +100,18 @@
 
         <!---->
         <activity android:name="practice.mobilesecurity.chapter04.AppManagerActivity">
+        </activity>
+
+
+        <!--chap05-->
+        <!-- 病毒查杀 -->
+        <activity
+            android:name=".chapter05.VirusScanActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".chapter05.VirusScanSpeedActivity"
+            android:screenOrientation="portrait" >
         </activity>
 
         <!--receiver-->

@@ -24,6 +24,7 @@ import practice.mobilesecurity.chapter02.utils.Constant;
 import practice.mobilesecurity.chapter02.utils.MD5Utils;
 import practice.mobilesecurity.chapter03.SecurityPhoneActivity;
 import practice.mobilesecurity.chapter04.AppManagerActivity;
+import practice.mobilesecurity.chapter05.VirusScanActivity;
 
 public class HomeActivity extends Activity {
     private GridView gv_home;
@@ -62,6 +63,9 @@ public class HomeActivity extends Activity {
                         break;
                     case 2:
                         startActivity(AppManagerActivity.class);
+                        break;
+                    case 3:
+                        startActivity(VirusScanActivity.class);
                         break;
 
                 }
