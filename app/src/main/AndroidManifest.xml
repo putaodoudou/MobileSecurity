@@ -27,6 +27,9 @@
     <!--chap05-->
 
     <!--chap06-->
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <!--之前由于却扫此声明，导致无法检测缓存，查看输出日志很重要-->
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
     <!--chap07-->
     <!--chap08-->
     <!--chap09-->
@@ -111,6 +114,16 @@
         </activity>
         <activity
             android:name=".chapter05.VirusScanSpeedActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!--chap06--><!-- 缓存清理 -->
+        <activity
+            android:name=".chapter06.CacheClearListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".chapter06.CleanCacheActivity"
             android:screenOrientation="portrait" >
         </activity>
 

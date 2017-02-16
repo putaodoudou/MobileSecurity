@@ -25,6 +25,7 @@ import practice.mobilesecurity.chapter02.utils.MD5Utils;
 import practice.mobilesecurity.chapter03.SecurityPhoneActivity;
 import practice.mobilesecurity.chapter04.AppManagerActivity;
 import practice.mobilesecurity.chapter05.VirusScanActivity;
+import practice.mobilesecurity.chapter06.CacheClearListActivity;
 
 public class HomeActivity extends Activity {
     private GridView gv_home;
@@ -66,6 +67,9 @@ public class HomeActivity extends Activity {
                         break;
                     case 3:
                         startActivity(VirusScanActivity.class);
+                        break;
+                    case 4:
+                        startActivity(CacheClearListActivity.class);
                         break;
 
                 }
