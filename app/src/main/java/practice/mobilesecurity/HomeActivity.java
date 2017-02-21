@@ -27,6 +27,7 @@ import practice.mobilesecurity.chapter04.AppManagerActivity;
 import practice.mobilesecurity.chapter05.VirusScanActivity;
 import practice.mobilesecurity.chapter06.CacheClearListActivity;
 import practice.mobilesecurity.chapter07.ProcessManagerActivity;
+import practice.mobilesecurity.chapter08.OperatorSetActivity;
 
 public class HomeActivity extends Activity {
     private GridView gv_home;
@@ -74,6 +75,9 @@ public class HomeActivity extends Activity {
                         break;
                     case 5:
                         startActivity(ProcessManagerActivity.class);
+                        break;
+                    case 6:
+                        startActivity(OperatorSetActivity.class);
                         break;
 
                 }

@@ -137,6 +137,17 @@
             android:name=".chapter07.ProcessManagerSettingActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <!--chap08--><!-- 流量监控 -->
+        <activity
+            android:name=".chapter08.TrafficMonitoringActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".chapter08.OperatorSetActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+
         <!--receiver-->
         <!--chap02-->
         <receiver android:name="practice.mobilesecurity.chapter02.receiver.SmsLostFindReceiver">
@@ -175,6 +186,12 @@
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>
         </receiver>
+        <!--chap08-->
+        <receiver android:name=".chapter08.receiver.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
 
         <!--service-->
         <!--chap02-->
@@ -185,6 +202,11 @@
         <service
             android:name=".chapter07.service.AutoKillProcessService"
             android:persistent="true" >
+        </service>
+        <!--chap08--><!-- 监控流量的服务 -->
+        <service
+            android:name=".chapter08.service.TrafficMonitoringService"
+            android:persistent="true">
         </service>
     </application>
 
