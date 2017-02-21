@@ -30,7 +30,9 @@
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
     <!--之前由于却扫此声明，导致无法检测缓存，查看输出日志很重要-->
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
-    <!--chap07-->
+    <!--chap07--><!--out date:  <uses-permission android:name="android.permission.GET_TASKS" />-->
+    <!--应用要使用该接口必须声明权限android.permission.REAL_GET_TASKS而这个权限是不对三方应用开放的。（在Manifest里申请了也没有作用）-->
+    <uses-permission android:name="android.permission.REAL_GET_TASKS" />
     <!--chap08-->
     <!--chap09-->
     <!--chap10-->
@@ -126,7 +128,15 @@
             android:name=".chapter06.CleanCacheActivity"
             android:screenOrientation="portrait" >
         </activity>
-
+        <!--chap07--><!-- 进程管理 -->
+        <activity
+            android:name=".chapter07.ProcessManagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".chapter07.ProcessManagerSettingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
         <!--receiver-->
         <!--chap02-->
         <receiver android:name="practice.mobilesecurity.chapter02.receiver.SmsLostFindReceiver">
@@ -170,6 +180,11 @@
         <!--chap02-->
         <service android:name="practice.mobilesecurity.chapter02.service.GPSLocationService"
             android:permission="true">
+        </service>
+        <!--chap07--><!-- 锁屏自动清理进程 -->
+        <service
+            android:name=".chapter07.service.AutoKillProcessService"
+            android:persistent="true" >
         </service>
     </application>
 
