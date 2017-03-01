@@ -10,7 +10,7 @@ public class AntiVirusDao {
     public static String checkVirus(String md5) {
         String desc = null;
         SQLiteDatabase db = SQLiteDatabase.openDatabase(
-                "/data/data/ptactice.mobilesecurity/files/antivirus.db", null,
+                "/data/data/practice.mobilesecurity/files/antivirus.db", null,
                 SQLiteDatabase.OPEN_READONLY);
         Cursor cursor = db.rawQuery("select desc from datable where md5=?",
                 new String[] { md5 });

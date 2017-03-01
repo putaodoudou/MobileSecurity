@@ -36,7 +36,16 @@
     <!--chap08-->
     <!--chap09-->
     <!--chap10-->
-
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
@@ -146,6 +155,37 @@
             android:name=".chapter08.OperatorSetActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <!--chap09--><!-- 高级工具 -->
+        <activity
+            android:name=".chapter09.AdvancedToolsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".chapter09.AppLockActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".chapter09.NumBelongtoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".chapter09.SMSBackupActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".chapter09.SMSReducitionActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".chapter09.EnterPswActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--chap10--><!-- 设置中心 -->
+        <activity
+            android:name=".chapter10.SettingsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
 
 
         <!--receiver-->
@@ -206,6 +246,11 @@
         <!--chap08--><!-- 监控流量的服务 -->
         <service
             android:name=".chapter08.service.TrafficMonitoringService"
+            android:persistent="true">
+        </service>
+        <!-- 程序锁 -->
+        <service
+            android:name=".chapter09.service.AppLockService"
             android:persistent="true">
         </service>
     </application>

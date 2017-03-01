@@ -28,6 +28,8 @@ import practice.mobilesecurity.chapter05.VirusScanActivity;
 import practice.mobilesecurity.chapter06.CacheClearListActivity;
 import practice.mobilesecurity.chapter07.ProcessManagerActivity;
 import practice.mobilesecurity.chapter08.OperatorSetActivity;
+import practice.mobilesecurity.chapter09.AdvancedToolsActivity;
+import practice.mobilesecurity.chapter10.SettingsActivity;
 
 public class HomeActivity extends Activity {
     private GridView gv_home;
@@ -78,6 +80,12 @@ public class HomeActivity extends Activity {
                         break;
                     case 6:
                         startActivity(OperatorSetActivity.class);
+                        break;
+                    case 7:
+                        startActivity(AdvancedToolsActivity.class);
+                        break;
+                    case 8:
+                        startActivity(SettingsActivity.class);
                         break;
 
                 }
